@@ -29,8 +29,14 @@ public class CatController {
     //고양이 정보 조회
     @GetMapping("/{id}")
     public Cat getCatById(@PathVariable Long id) {
-        Optional<Cat> cat = catList.stream().filter(c->c.getId().equals(id)).findFirst();
-        return cat.orElse(null);
+//        Optional<Cat> cat = catList.stream().filter(c->c.getId().equals(id)).findFirst();
+//        return cat.orElse(null);
+        for( Cat cat : catList ) {
+            if (cat.getId().equals(id)) {
+                return cat;
+            }
+        }
+        return null;
     }
 
     // 새로운 고양이 추가
@@ -44,7 +50,14 @@ public class CatController {
     // 고양이 삭제
     @DeleteMapping("/{id}")
     public String deleteCat(@PathVariable Long id) {
-        boolean removed = catList.removeIf(c -> c.getId().equals(id));
-        return removed ? "고양이 정보 삭제 완료" : "해당 아이디의 고양이를 찾지 못했습니다.";
+//        boolean removed = catList.removeIf(c -> c.getId().equals(id));
+//        return removed ? "고양이 정보 삭제 완료" : "해당 아이디의 고양이를 찾지 못했습니다.";
+        for(int i=0; i<catList.size(); i++) {
+            if(catList.get(i).getId().equals(id)) {
+                catList.remove(i);
+                return "고양이 정보 삭제 완료";
+            }
+        }
+        return "해당 아이디의 고양이를 찾지 못했습니다.";
     }
 }
