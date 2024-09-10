@@ -7,5 +7,5 @@ import java.util.HashMap;
 @Mapper
 public interface ExMapper {
 
-    HashMap<String, Object> findById(HashMap<String, Object> parmMap);
+    HashMap<String, Object> findById(HashMap<String, Object> paramMap);
 }
