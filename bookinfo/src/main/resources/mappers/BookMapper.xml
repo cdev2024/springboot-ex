@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.bookinfo.mapper.BookMapper">
+
+    <select id="getAllBooks" resultType="com.example.bookinfo.dto.BookDto">
+        SELECT * FROM BOOK
+    </select>
+
+    <select id="searchBooks" resultType="com.example.bookinfo.dto.BookDto">
+        SELECT * FROM BOOK
+        WHERE title LIKE '%' || #{title} || '%'
+        OR author LIKE '%' || #{author} || '%'
+        OR publisher LIKE '%' || #{publisher} || '%'
+    </select>
+
+</mapper>
+
