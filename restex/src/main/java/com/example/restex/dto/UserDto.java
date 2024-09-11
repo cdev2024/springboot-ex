@@ -1,7 +1,6 @@
 package com.example.restex.dto;
 
 import lombok.*;
-import lombok.extern.slf4j.Slf4j;
 
 //@Setter
 //@Getter
@@ -9,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 //@ToString
 //@EqualsAndHashCode
 @Data
-public class User {
-    private String id;
+public class UserDto {
     private String name;
+    private String email;
 }

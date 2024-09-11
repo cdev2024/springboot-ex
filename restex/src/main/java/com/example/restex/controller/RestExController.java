@@ -2,9 +2,8 @@ package com.example.restex.controller;
 
 import com.example.restex.dto.ItemDto;
 import com.example.restex.dto.ResponseDto;
-import com.example.restex.dto.User;
+import com.example.restex.dto.UserDto;
 import com.example.restex.service.RestExService;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -44,7 +43,7 @@ public class RestExController {
     // http://localhost:8080/body
     // @RequestBody를 사용 데이터를 객체로 바인딩
     @PostMapping("/body")
-    public String testRequestBody(@RequestBody User user) {
+    public String testRequestBody(@RequestBody UserDto user) {
         log.info("RequestBody: " + user);
         return "RequestBody: " + user;
     }
