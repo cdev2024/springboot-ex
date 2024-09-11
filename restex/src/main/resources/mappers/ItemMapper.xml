@@ -8,4 +8,8 @@
         SELECT ID, NAME FROM ITEM WHERE ID = #{id}
     </select>
 
+    <insert id="registerItem" parameterType="com.example.restex.dto.ItemDto">
+        INSERT INTO ITEM(ID, NAME) VALUES( #{id}, #{name} )
+    </insert>
+
 </mapper>
