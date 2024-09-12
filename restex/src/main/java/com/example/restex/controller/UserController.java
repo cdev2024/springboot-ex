@@ -14,9 +14,12 @@ public class UserController {
 
     // 사용자 생성/등록 API
     @PostMapping
-    public User createUser(@RequestBody UserDto userDto) {
+    public User createUser(@RequestBody UserDto userDto){
         return userService.createUser(userDto);
     }
+//    public User createUser(@RequestBody UserDto userDto) throws Exception {
+//        return userService.createUserWithRollback(userDto);
+//    }
 
     // 사용자 조회 API
     @GetMapping("/{id}")
